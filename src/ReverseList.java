@@ -1,18 +1,21 @@
 import Others.ListNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ReverseList {
-    public static ListNode getTailNode(ListNode head){
+    public static ArrayList<Integer> getTailNode(ListNode head){
+        ArrayList<Integer> arrList = new ArrayList<Integer>();
         ListNode newList = new ListNode(-1, null);
         while(head != null){
             ListNode next = head.next;
             head.next = newList.next;
             newList.next = head;
+            arrList.add(0, newList.next.val);
             head = next;
         }
-        return newList.next;
+        return arrList;
     }
 
     public static void main(String[] args) {
@@ -22,8 +25,9 @@ public class ReverseList {
         ListNode l2 = new ListNode(2, l3);
         ListNode l1 = new ListNode(1, l2);
 
-        ListNode.printList(l1);
-        System.out.println();
-        ListNode.printList(getTailNode(l1));
+//        ListNode.printList(l1);
+//        System.out.println();
+//        ListNode.printList(getTailNode(l1));
+        System.out.println(getTailNode(l1));
     }
 }
