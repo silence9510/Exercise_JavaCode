@@ -1,5 +1,8 @@
 import Others.ListNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EntranceOfListLoop {
     public static ListNode EntryNodeOfLoop(ListNode pHead)
     {
@@ -33,6 +36,40 @@ public class EntranceOfListLoop {
         return  nSlow;
     }
 
+//    水
+    public static ListNode EntryNodeOfLoop1(ListNode pHead){
+
+        while (true){
+            if (pHead.val >= 999)
+                break;
+            pHead.val = pHead.val + 999;
+            pHead = pHead.next;
+        }
+        pHead.val = pHead.val - 999;
+        return pHead;
+    }
+
+    public static ListNode EntryNodeOfLoop2(ListNode pHead){
+        while (true){
+            if (pHead.next.val < pHead.val)
+                break;
+            pHead = pHead.next;
+        }
+        return pHead.next;
+    }
+
+    public static ListNode EntryNodeOfLoop3(ListNode pHead){
+        List list = new ArrayList();
+        while (true){
+            System.out.println(pHead);
+            if (list.contains(pHead))
+                break;
+            list.add(pHead);
+            pHead = pHead.next;
+        }
+        return pHead;
+    }
+
     public static void main(String[] args) {
         ListNode l5 = new ListNode(5, null);
         ListNode l4 = new ListNode(4, l5);
@@ -41,6 +78,6 @@ public class EntranceOfListLoop {
         ListNode l1 = new ListNode(1, l2);
         l5.next = l3;
 
-        System.out.println(EntryNodeOfLoop(l1).val);
+        System.out.println(EntryNodeOfLoop3(l1).val);
     }
 }
