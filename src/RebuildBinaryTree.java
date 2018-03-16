@@ -3,7 +3,8 @@ import Others.BinaryTreeNode;
 import java.util.Arrays;
 
 public class RebuildBinaryTree {
-    public static BinaryTreeNode Construct(int[] preOrder, int[] midOrder, int length) throws Exception {
+    public static BinaryTreeNode Construct(int[] preOrder, int[] midOrder) throws Exception {
+        int length = preOrder.length;
         if(preOrder == null || midOrder == null || length < 0){
             return null;
         }
@@ -50,7 +51,7 @@ public class RebuildBinaryTree {
     public static void test(int[] preOrder, int[] midOrder, int length) throws Exception {
         System.out.println("先序：" + Arrays.toString(preOrder));
         System.out.println("中序：" + Arrays.toString(midOrder));
-        BinaryTreeNode b = Construct(preOrder, midOrder, length);
+        BinaryTreeNode b = Construct(preOrder, midOrder);
         BinaryTreeNode.printBinaryTree(b);
     }
 

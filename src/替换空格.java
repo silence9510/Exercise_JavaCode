@@ -10,7 +10,7 @@ public class 替换空格 {
         }
         int idxOfOriginal = n - 1;
         int idxOfNew = str.length() - 1;
-        while(idxOfNew > idxOfOriginal && idxOfOriginal > 0){
+        while(idxOfNew > idxOfOriginal && idxOfOriginal >= 0){
             if(str.charAt(idxOfOriginal) == ' '){
                 str.setCharAt(idxOfNew--, '0');
                 str.setCharAt(idxOfNew--, '2');
@@ -24,7 +24,7 @@ public class 替换空格 {
     }
 
     public static void main(String[] args) {
-        StringBuffer str = new StringBuffer("i love you");
+        StringBuffer str = new StringBuffer(" helloworld");
         System.out.println(replaceSpace(str));
     }
 
