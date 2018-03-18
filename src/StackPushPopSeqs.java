@@ -7,6 +7,7 @@ public class StackPushPopSeqs {
         Stack<Integer> stack = new Stack<>();
         for(int i=0, j=0; i<len; i++){
             stack.push(pushA[i]);
+//
             while (j < len && stack.peek() == popA[j]){
                 stack.pop();
                 j++;
