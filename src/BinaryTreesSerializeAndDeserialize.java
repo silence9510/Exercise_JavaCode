@@ -1,9 +1,9 @@
 import Others.TreeNode;
-
 import java.util.Arrays;
 import java.util.List;
 
 public class BinaryTreesSerializeAndDeserialize {
+    int num = -1;
     String Serialize(TreeNode root) {
         StringBuffer sb = new StringBuffer();
         if (root == null)
@@ -15,9 +15,22 @@ public class BinaryTreesSerializeAndDeserialize {
     }
     TreeNode Deserialize(String str) {
         TreeNode root;
-        List<String> s = Arrays.asList(str.split("!"));
-
-       return null;
+        String[] s = str.split("!");
+        root = preOrder(s);
+       return root;
+    }
+    TreeNode preOrder(String[] s){
+        num++;
+        if (num < s.length){
+            if (s[num].equals("#")){
+                return null;
+            }
+            TreeNode root = new TreeNode(Integer.parseInt(s[num]));
+            root.left = preOrder(s);
+            root.right = preOrder(s);
+            return root;
+        }else
+            return null;
     }
 
     public static void main(String[] args) {
@@ -33,5 +46,6 @@ public class BinaryTreesSerializeAndDeserialize {
         n10.left = n6;  n10.right = n14;
 
         System.out.println(new BinaryTreesSerializeAndDeserialize().Serialize(n10));
+        System.out.println(new BinaryTreesSerializeAndDeserialize().Deserialize("10!6!4!#!#!8!#!#!14!12!#!#!16!#!#!").val);
     }
 }
