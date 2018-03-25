@@ -1,3 +1,5 @@
+package MeiTuan;
+
 import java.util.Scanner;
 
 public class MeiTuan2 {

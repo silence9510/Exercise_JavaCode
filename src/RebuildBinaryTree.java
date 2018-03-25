@@ -51,7 +51,7 @@ public class RebuildBinaryTree {
     public static void test(int[] preOrder, int[] midOrder, int length) throws Exception {
         System.out.println("先序：" + Arrays.toString(preOrder));
         System.out.println("中序：" + Arrays.toString(midOrder));
-        BinaryTreeNode b = Construct(preOrder, midOrder);
+        BinaryTreeNode b = Construct(preOrder, midOrder        );
         BinaryTreeNode.printBinaryTree(b);
     }
 
