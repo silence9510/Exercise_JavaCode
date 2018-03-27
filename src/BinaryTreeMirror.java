@@ -1,8 +1,6 @@
 import Others.TreeNode;
 
-import java.util.LinkedList;
-
-public class BinaaryTreeMirror {
+public class BinaryTreeMirror {
     public void Mirror(TreeNode root) {
         if (root == null) return;
         swapTreeNode(root);

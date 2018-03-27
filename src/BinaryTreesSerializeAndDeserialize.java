@@ -1,6 +1,4 @@
 import Others.TreeNode;
-import java.util.Arrays;
-import java.util.List;
 
 public class BinaryTreesSerializeAndDeserialize {
     int num = -1;
@@ -46,6 +44,6 @@ public class BinaryTreesSerializeAndDeserialize {
         n10.left = n6;  n10.right = n14;
 
         System.out.println(new BinaryTreesSerializeAndDeserialize().Serialize(n10));
-        System.out.println(new BinaryTreesSerializeAndDeserialize().Deserialize("10!6!4!#!#!8!#!#!14!12!#!#!16!#!#!").val);
+//        System.out.println(new BinaryTreesSerializeAndDeserialize().Deserialize("10!6!4!#!#!8!#!#!14!12!#!#!16!#!#!").val);
     }
 }
