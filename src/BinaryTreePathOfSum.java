@@ -7,7 +7,7 @@ public class BinaryTreePathOfSum {
     private ArrayList<ArrayList<Integer>> result = new ArrayList<>();
 
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
-        dfs(root, target, new ArrayList<>());
+        dfs(root, target, new ArrayList<Integer>());
         return result;
     }
 
