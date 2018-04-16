@@ -1,5 +1,5 @@
 // Created by ZCL on 2018-04-16.
-
+// haha
 public class RobotsMoveArea {
     public int movingCount(int threshold, int rows, int cols)
     {
