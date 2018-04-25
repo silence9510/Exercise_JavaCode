@@ -21,6 +21,16 @@ public class GreatestSumOfArray {
         }
         return max;
     }
+	
+	public int FindGreatestSumOfSubArray(int[] nums, int n) {
+		int maxNow = nums[0];
+		int maxSub = nums[0];
+		for (int i = 1; i < nums.length; i++) {
+			maxNow = Math.max(maxNow + nums[i], nums[i]);
+			maxSub = Math.max(maxNow, maxSub);
+		}
+		return maxSub;
+	}
 
     public static void main(String[] args) {
         int[] arr = {2, 8, 1, 5, 9};
